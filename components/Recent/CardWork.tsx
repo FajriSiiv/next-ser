@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import webG from "public/images/web.jpg";
-import branding from "public/images/branding-img.jpg";
-import sosmed from "public/images/sosmed-img.jpg";
+import webG from "public/images/web.webp";
+import branding from "public/images/branding-img.webp";
+import sosmed from "public/images/sosmed-img.webp";
 
 interface PageProps {
   grid_rev?: string;
@@ -14,8 +14,10 @@ interface PageProps {
 
 const GridWork = ({ grid_rev = "", brand, desc, title, gambar }: PageProps) => {
   return (
-    <div className={`flex gap-x-[100px] max-h-[400px] ${grid_rev}`}>
-      <div className="relative w-1/2 group hover:scale-110 transition-all">
+    <div
+      className={`flex gap-x-[100px] max-h-[400px] ${grid_rev} md:flex-col md:gap-y-[50px] md:max-h-fit`}
+    >
+      <div className="relative w-1/2 group hover:scale-110 transition-all md:w-full">
         <div>
           <Image
             src={gambar}
@@ -43,14 +45,14 @@ const GridWork = ({ grid_rev = "", brand, desc, title, gambar }: PageProps) => {
           <span className="text-lg cursor-pointer">See Project</span>
         </div>
       </div>
-      <div className="flex flex-col justify-start w-1/2">
-        <h3 className="text-5xl font-bold">{title}</h3>
-        <p className="pt-5 pb-10 leading-relaxed">{desc}</p>
-        <div className="flex gap-x-5">
+      <div className="flex flex-col justify-start w-1/2 md:w-full">
+        <h3 className="text-5xl font-bold sm:text-3xl">{title}</h3>
+        <p className="pt-5 pb-10 leading-relaxed sm:text-base">{desc}</p>
+        <div className="flex flex-wrap gap-5">
           {brand?.map((e: any, i: number) => (
             <div
               key={i}
-              className="cursor-pointer border-2 border-[#BABCBD] py-1 px-4 rounded-full w-fit text-center text-[#BABCBD] "
+              className="cursor-pointer border-2 border-[#BABCBD] py-1 px-4 rounded-full w-fit text-center text-[#BABCBD]"
             >
               {e}
             </div>

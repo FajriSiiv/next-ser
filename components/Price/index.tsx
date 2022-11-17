@@ -11,7 +11,7 @@ const initialData = [
 
 const CardPrice = () => {
   return (
-    <div className="w-1/4 bg-white py-7 px-5 rounded-2xl hover:shadow-[11px_11px_0px_1px_rgba(0,0,0,0.75)] hover:border-2 border-2 border-[#55E6A5] hover:border-[#181818] hover:scale-110 cursor-default flex flex-col justify-between transition-all group">
+    <div className="w-1/4 bg-white py-7 px-5 rounded-2xl hover:shadow-[11px_11px_0px_1px_rgba(0,0,0,0.75)] hover:border-2 border-2 border-[#55E6A5] hover:border-[#181818] hover:scale-110 cursor-default flex flex-col justify-between transition-all group md:w-full md:min-w-[400px] md:mx-20 md:max-w-md sm:min-w-[200px] sm:max-w-md sm:mx-0">
       <div>
         <div>
           <div className="pb-5 ">
@@ -58,7 +58,7 @@ const CardPrice = () => {
                   d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <p className="text-lg font-medium">{e}</p>
+              <p className="text-lg font-medium sm:text-xs">{e}</p>
             </div>
           ))}
         </div>
@@ -85,14 +85,14 @@ export default function Price() {
           />
         </svg>
       </div>
-      <div className="px-20 bg-[#55E6A5] pb-72">
+      <div className="px-20 bg-[#55E6A5] pb-72 md:px-10">
         <div className="text-center text-lg">
           <h2 className="text-[3rem] font-extrabold mb-10">
             Choose your package
           </h2>
           <p>Change the package that suits you</p>
         </div>
-        <div className="flex gap-x-[60px]  justify-center mt-20">
+        <div className="flex gap-x-[60px]  justify-center mt-20 md:flex-wrap md:gap-y-[50px]">
           <CardPrice />
           <CardPrice />
           <CardPrice />
